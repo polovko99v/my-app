@@ -1,0 +1,17 @@
+
+<ul class="players">
+  <li *ngFor="let player of players"
+    [class.selected]="player === selectedPlayer"
+    (click)="onSelect(player)">
+    <span class="badge">{{player.number}}</span> {{player.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedPlayer">
+
+  <h2>{{selectedPlayer.name | uppercase}} Details</h2>
+  <div><span>number: </span>{{selectedPlayer.number}}</div>
+  <div><span>name: </span>{{selectedPlayer.name}}</div>
+  <div><span>points: </span>{{selectedPlayer.points}}</div>
+
+</div>
