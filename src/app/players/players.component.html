@@ -3,10 +3,18 @@
   <li *ngFor="let player of players"
     [class.selected]="player === selectedPlayer"
     (click)="onSelect(player)">
+
     <span class="badge">{{player.number}}</span> {{player.name}}
   </li>
 </ul>
-
+<div class="ronaldo">
+  <p><img src="https://pbs.twimg.com/profile_images/691780371898306560/Pr447R-T_400x400.jpg" width="10%" height="10%" class="round" >
+    Ronaldo</p>
+  <P>Points: 1000</P>
+  <p>Role: Forward</p>
+  <P>Team: Juventus</P>
+  <div class="color-line"></div>
+</div>
 <div *ngIf="selectedPlayer">
 
   <h2>{{selectedPlayer.name | uppercase}} Details</h2>
