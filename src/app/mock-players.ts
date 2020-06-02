@@ -1,9 +1,9 @@
 import { Player } from './player';
 
 export const PLAYERS: Player[] = [
-  { number: 7, name: 'Ronaldo', points:100 },
-  { number: 10, name: 'Messi', points:150 },
-  { number: 5, name: 'Buffon', points:70 },
-  { number: 21, name: 'Benzema', points:200 },
-  { number: 9, name: 'Bale', points:300 },
+  { playerId: 7, playerName: 'Ronaldo', points: {type:"love",value:0}, matchesCount:10, playerImageUrl:"sdadsa", point:null, position:"Forward",teamId:20,teamName:"Bayern",totalLeaguePoint:10000},
+  { playerId: 7, playerName: 'Ronaldo', points: {type:"love",value:0}, matchesCount:10, playerImageUrl:"sdadsa", point:null, position:"Forward",teamId:20,teamName:"Bayern",totalLeaguePoint:10000},
+  { playerId: 7, playerName: 'Ronaldo', points: {type:"love",value:0}, matchesCount:10, playerImageUrl:"sdadsa", point:null, position:"Forward",teamId:20,teamName:"Bayern",totalLeaguePoint:10000},
+  { playerId: 7, playerName: 'Ronaldo', points: {type:"love",value:0}, matchesCount:10, playerImageUrl:"sdadsa", point:null, position:"Forward",teamId:20,teamName:"Bayern",totalLeaguePoint:10000},
+  { playerId: 7, playerName: 'Ronaldo', points: {type:"love",value:0}, matchesCount:10, playerImageUrl:"sdadsa", point:null, position:"Forward",teamId:20,teamName:"Bayern",totalLeaguePoint:10000},
 ];

@@ -3,8 +3,7 @@
   <li *ngFor="let player of players"
     [class.selected]="player === selectedPlayer"
     (click)="onSelect(player)">
-
-    <span class="badge">{{player.number}}</span> {{player.name}}
+    <span class="badge">{{player.playerId}}</span> {{player.playerName}} | {{player.teamName}} | Total League Points:{{player.totalLeaguePoint}} |
   </li>
 </ul>
 <div class="ronaldo">
@@ -14,12 +13,13 @@
   <p>Role: Forward</p>
   <P>Team: Juventus</P><br>
   <div class="color-line"></div>
+  
 </div>
 <div *ngIf="selectedPlayer">
 
-  <h2>{{selectedPlayer.name | uppercase}} Details</h2>
-  <div><span>number: </span>{{selectedPlayer.number}}</div>
-  <div><span>name: </span>{{selectedPlayer.name}}</div>
+  <h2>{{selectedPlayer.playerName | uppercase}} Details</h2>
+  <div><span>number: </span>{{selectedPlayer.playerId}}</div>
+  <div><span>name: </span>{{selectedPlayer.playerName}}</div>
   <div><span>points: </span>{{selectedPlayer.points}}</div>
 
 </div>

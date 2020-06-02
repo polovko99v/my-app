@@ -1,6 +1,16 @@
 export interface Player {
-  
-    number: number;
-    name: string;
-    points:number;
-  }
+  matchesCount:number,
+  playerId:number,
+  playerImageUrl:string,
+  playerName:string,
+  point:number,
+  points:
+    {
+      type:string,
+      value:number
+    },
+  position:string,
+  teamId:number,
+  teamName:string,
+  totalLeaguePoint:number
+}
