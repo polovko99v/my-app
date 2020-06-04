@@ -16,7 +16,7 @@ export class PlayersComponent implements OnInit {
   constructor(private playerService:PlayerService) { }
 
   ngOnInit(): void {
-    this.playerService.getLeaguePlayerPoints(5,2019,"eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIn0.tzvRd-91JPTTtkr32gtfL1lvqNK60nYBvPY84TapX-TebB3_luFeCaVCgPsFv59bNSQaU0RN5sCAXa77qfATktyFn1xymk6E.V9tfUDsrsfEJT1mqTzGglA.Yktzks17BaXIrFANAEcJkwoxwllNmD46BOjfYAdhWxp1IDaWVd74Amc10uZzvha0jG16huvSJ-37hK2y3A2nxJI6UgAAmXkE7jAbtfpLMma9-Z2k5aZyhy1fQadUde6kPx2YIbw14PiPibH1HC-Za9iTkIkjMw801PXL2Rn8rSOeAphWO3i1nWzB4PsIiY2Z.r7LAjlANMvJFOjG15xOs8EqgbvH_ZzPNReDRuPXbaY0").subscribe((response:any)=>{
+    this.playerService.getLeaguePlayerPoints(5,2019,"eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIn0.lxxKbYCCfeaQl67uARtddunpRjzL9tBSe2HnEKX_qpL4_Y8PsV8XO12aSFwikCY5OAviXe2cZbZAuTwtH7amyEdLvgit-Bzg.2vxS3UjfMXzoMxgr09Et4A.Z5LlY9Qn8sQIMdV-qhmco3et-WIU8BSp0RI9JUGeYbSzSzojIdMluWrus8T3vnSIS2NE65qgRimjnp15apllpBCpF7K-wCdJ7LlhzzCk-JVQF3jWLl6ORPfO3UYKLNlpI0VQFNfu1cd8_wJsQO9_2P2o2QdfQy_6LH0vi0n-PcJSY0Pcl8Vmmb9RN-aooTUp.hBwLCS9m9sePgaYzzvtXol4XYyaQ8OKwSsAYiJRp5u8").subscribe((response:any)=>{
       console.log(response);
       this.players=response;
     })
