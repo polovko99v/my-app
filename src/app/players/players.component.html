@@ -1,25 +1,16 @@
 
-<ul class="players">
-  <li *ngFor="let player of players"
-    [class.selected]="player === selectedPlayer"
-    (click)="onSelect(player)">
-    <span class="badge">{{player.playerId}}</span> {{player.playerName}} | {{player.teamName}} | Total League Points:{{player.totalLeaguePoint}} |
-  </li>
-</ul>
-<div class="ronaldo">
-  <p><img src="https://pbs.twimg.com/profile_images/691780371898306560/Pr447R-T_400x400.jpg" width="10%" height="10%" class="round" >
-    Ronaldo</p>
-  <P>Points: 1000</P>
-  <p>Role: Forward</p>
-  <P>Team: Juventus</P><br>
-  <div class="color-line"></div>
-  
-</div>
-<div *ngIf="selectedPlayer">
+<nav>
+  <a (click)="handleSelectLeague(5,2019)">Premier League</a>
+  <a (click)="handleSelectLeague(8,2019)">Champions League</a>
+</nav>
 
-  <h2>{{selectedPlayer.playerName | uppercase}} Details</h2>
-  <div><span>number: </span>{{selectedPlayer.playerId}}</div>
-  <div><span>name: </span>{{selectedPlayer.playerName}}</div>
-  <div><span>points: </span>{{selectedPlayer.points}}</div>
-
+<div class="players">
+  <div *ngFor="let player of players; let i = index;" class="player">
+    <img class="player-image" [src]="player.playerImageUrl" />
+    <div class="player-info">
+      <div class="player-name">{{i+1}}. {{player.playerName}}</div>
+      <div class="player-total-point">{{ player.totalLeaguePoint | roundPoint }}</div>
+      <app-points-bar [points]="player.points" [total-point]=" player.totalLeaguePoint"></app-points-bar>
+    </div>
+  </div>
 </div>

@@ -9,12 +9,16 @@ export class PlayerService {
     constructor(private httpClient: HttpClient){
 
     }
-    public getLeaguePlayerPoints(competitionId: number, seasonId: number, token: string): Observable<any>
+    public getLeaguePlayerPoints(competitionId: number, seasonId: number, token: string, pointType?:string, positionType?:string): Observable<any>
   {
     const options = {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)
     };
 
-    return this.httpClient.get<any>(`https://api.twelve.football/vnext2/competitions/5/seasons/2019/points`, options );
+    var q = '?';
+    if (pointType) q += '&pointType=' + pointType;
+    if (positionType) q += '&positionType=' + positionType;
+
+    return this.httpClient.get<any>(`https://api.twelve.football/vnext2/competitions/${competitionId}/seasons/${seasonId}/points${q}`, options );
   }
 }

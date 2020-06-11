@@ -1,0 +1,3 @@
+<div class="points">
+    <div *ngFor="let point of points | sortPoints;" [class]="'points-bar points-bar-' + point.type" [style]="'width: ' + 100*point.value/totalPoint + '%'"></div>
+</div>

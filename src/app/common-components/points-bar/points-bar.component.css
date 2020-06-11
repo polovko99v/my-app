@@ -1,0 +1,23 @@
+
+
+.points {
+    display: flex;
+    width: 100%;
+    height: 16px;
+  }
+  
+  .points-bar-attack {
+    background-color: rgb(59, 91, 153);
+  }
+  .points-bar-defence {
+    background-color: rgb(242, 86, 77);
+  }
+  .points-bar-shot {
+    background-color: rgb(33, 208, 122);
+  }
+  .points-bar-press {
+    background-color: rgb(254, 228, 124);
+  }
+  .points-bar-love {
+    background-color: rgb(254, 228, 124);
+  }
