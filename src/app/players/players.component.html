@@ -1,15 +1,44 @@
 
 <nav>
   <a (click)="handleSelectLeague(5,2019)">Premier League</a>
-  <a (click)="handleSelectLeague(8,2019)">Champions League</a>
+  <a (click)="handleSelectLeague(8,2019)">Champions League</a><br>
+  <div class="dropdown">
+    <button class="dropbtn">Point Type</button>
+    <div class="dropdown-content">
+      <a (click)="handleSelectLeague(5,2019)">Attack</a>
+      <a (click)="handleSelectLeague(5,2019)">Defence</a>
+      <a (click)="handleSelectLeague(5,2019)">Press</a>
+      <a (click)="handleSelectLeague(5,2019)">Shot</a>
+      <a (click)="handleSelectLeague(5,2019)">Love</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Position</button>
+    <div class="dropdown-content">
+      <a (click)="handleSelectLeague(5,2019)">Forward</a>
+      <a (click)="handleSelectLeague(5,2019)">Midfielder</a>
+      <a (click)="handleSelectLeague(5,2019)">Defender</a>
+      <a (click)="handleSelectLeague(5,2019)">Goalkeeper</a>    
+    </div>
+  </div>
 </nav>
+<div class="img-points">
+  <span>Attack - </span><img src="https://color-hex.org/colors/3b5b99.png" width="15px" height="15px">
+  <span>Defence - </span><img src="https://color-hex.org/colors/f2564d.png" width="15px" height="15px">
+  <span>Press - </span><img src="https://color-hex.org/colors/fee47c.png" width="15px" height="15px">
+  <span>Shot - </span><img src="https://color-hex.org/colors/21d07a.png" width="15px" height="15px">
+  <span>Love - </span><img src="https://color-hex.org/colors/fe7cd7.png" width="15px" height="15px">
+</div>
+<mat-progress-spinner mode="indeterminate" color="accent" class="spinner" diameter="60" *ngIf="showSpinner"></mat-progress-spinner>
+
+
 
 <div class="players">
   <div *ngFor="let player of players; let i = index;" class="player">
     <img class="player-image" [src]="player.playerImageUrl" />
     <div class="player-info">
-      <div class="player-name">{{i+1}}. {{player.playerName}}</div>
-      <div class="player-total-point">{{ player.totalLeaguePoint | roundPoint }}</div>
+      <div class="player-name">{{i+1}}. {{player.playerName}}  <p>{{player.teamName}}</p></div>
+      <div class="player-total-point">{{ player.totalLeaguePoint | roundPoint }}p</div>
       <app-points-bar [points]="player.points" [total-point]=" player.totalLeaguePoint"></app-points-bar>
     </div>
   </div>

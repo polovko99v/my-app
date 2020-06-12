@@ -1,26 +1,23 @@
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
-
-  p {
-    margin: 0;
-  }
 
   .toolbar {
-    position: absolute;
+    
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 70px;
     display: flex;
     align-items: center;
     background-color: #19d266;
     color: white;
-    font-weight: 800;
+    font-weight: 900;
+    
+    
+  }
+  a{
+    color: white;
+    margin-left: 15px;
+  }
+  a:link{
+    text-decoration: white;
   }
