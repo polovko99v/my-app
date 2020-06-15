@@ -29,7 +29,7 @@ export class PlayersComponent implements OnInit {
     this.playerService.getLeaguePlayerPoints(
         this.competitionId,
         this.seasonId,
-        "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIn0.N2v_ybKBHpU7Pdo1Szf0kfh_pMjWVOrYm9w5-4fE86P5B2aN2qPeikRgMiAyzsqxxOEMoD3da2R8BbchmlfcyiNMYfd_3KkY.OT6VqqGZHypAOrB1A2_2nQ.P5QfOVr6e1-l9ss-WYWcP0_zxIDKWscr7_r0QeR5sEYnkh-KZkSrJACvp23ZHqI_MhmZryWy3PLDNQiqlWpuhstXA-gsDMrzQ_yd-piFzZiywAgfe8lOkAqsXCj1zDE0960QHx7NfXA_uxMgyX_v-d4l8UPJHAytVe5kg4Q1KA-P2vPphYqBfR9iQ1DMAq-A.4OgAFaJbj1jlwA4gFDFhKq6Q447qxNYXzpi667A6aEw",
+        "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIn0.O7PF5jRYnzxKj6PEl-deWqw1onVfPZtyNOOAwT40ltlrxSddbngneanKCERaH87H_Y2M3HLsgmXYrKLKGRY1U4UQ6c3OtAXM.FDmQRjD692sezgBj7l3YjQ.GddqgC4b8Ts-VswU3I5WjJ9tpxJdvy5hKZSXygivvOsOeiab2ocWqfUOKbqiZjvQXPJNsQ02r7cO5G5VNruIzoDMH9eT_WrBqMRfUEYWkWoPi2ABzGYPVCk6-N4zCFamDAoY8AhMqvbFOuYB-gAd5rBiSqv9Tfl0OUuDXlawIYWVR5m9XwguKaXg44mmxrkM.0JVId3DfsLFnleaCv5QUdTHJ6el6ddvFBwX3G2bLxS0",
         this.pointType,
         this.positionType
       ).subscribe((response:any)=>{

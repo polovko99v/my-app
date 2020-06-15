@@ -28,7 +28,8 @@
   color: rgb(110, 112, 145);
 }
 .player-name p{
-  text-align: right;
+  text-align: end;
+  
 }
 .player-total-point {
   color: rgb(52, 54, 76);
@@ -107,6 +108,8 @@ nav a.active {
   background-color: #cfd8dc;
 }
 .spinner{
+  left:45%;
+  position: absolute;
   margin-left: 10px;
   margin-top: 10px;
   
