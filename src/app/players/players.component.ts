@@ -50,11 +50,13 @@ export class PlayersComponent implements OnInit {
   public handleSelectPointType(pointType: string): void {
     this.pointType = pointType;
     this.getPlayers();
+    this.showSpinner=true;
   }
 
   public handleSelectPositionType(positionType: string): void {
     this.positionType = positionType;
     this.getPlayers();
+    this.showSpinner=true;
   }
 
   public onSelect(player: Player): void {
