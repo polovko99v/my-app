@@ -4,15 +4,15 @@
         <h2>Sign In</h2>
         <form class="auth-form" [formGroup]="signinForm" (ngSubmit)="onSubmit()">
             <div>
-                <input type="text" formControlName="username" placeholder="Your name" class="auth-input" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <input type="text" formControlName="username" placeholder="Your username" class="auth-input" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                 <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                     <div *ngIf="f.username.errors.required">Username is required</div>
                 </div>
             </div>
             <div>
-                <input type="password" formControlName="secret" placeholder="Your secret" class="auth-input" [ngClass]="{ 'is-invalid': submitted && f.secret.errors }" />
+                <input type="password" formControlName="secret" placeholder="Your password" class="auth-input" [ngClass]="{ 'is-invalid': submitted && f.secret.errors }" />
                 <div *ngIf="submitted && f.secret.errors" class="invalid-feedback">
-                    <div *ngIf="f.secret.errors.required">Secret is required</div>
+                    <div *ngIf="f.secret.errors.required">Password is required</div>
                 </div>
             </div>
             <div>
