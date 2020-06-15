@@ -1,1 +1,29 @@
-<button (click)="handleSignIn()">Sign In</button>
+<div class="auth-container">
+    <div class="auth-form-wrapper">
+        <h1>Football reporting grounded in facts, not opinion</h1>
+        <h2>Sign In</h2>
+        <form class="auth-form" [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+            <div>
+                <input type="text" formControlName="username" placeholder="Your name" class="auth-input" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
+            </div>
+            <div>
+                <input type="password" formControlName="secret" placeholder="Your secret" class="auth-input" [ngClass]="{ 'is-invalid': submitted && f.secret.errors }" />
+                <div *ngIf="submitted && f.secret.errors" class="invalid-feedback">
+                    <div *ngIf="f.secret.errors.required">Secret is required</div>
+                </div>
+            </div>
+            <div>
+                <button [disabled]="loading" class="auth-button">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Sign In
+                </button>
+                <!-- <a routerLink="/register" class="btn btn-link">Register</a> -->
+            </div>
+        </form>
+        <h2>As a bonus we will give you access to our analytics tool right away</h2>
+    </div>
+    <img class="footrate-img" src="../../../assets/images/footrate-img.svg" />
+</div>
