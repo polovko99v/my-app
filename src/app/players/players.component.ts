@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Player} from '../player'
 import { PlayerService } from '../services/player.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-players',
@@ -17,7 +18,10 @@ export class PlayersComponent implements OnInit {
   public pointType: string;
   public positionType: string;
 
-  constructor(private playerService:PlayerService) { }
+  constructor(
+    private authService: AuthService,
+    private playerService:PlayerService
+  ) { }
 
   ngOnInit(): void {
    this.getPlayers();
@@ -29,7 +33,7 @@ export class PlayersComponent implements OnInit {
     this.playerService.getLeaguePlayerPoints(
         this.competitionId,
         this.seasonId,
-        "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIn0.srTGP7zGmBKWwRbO770dTwrLqAq5viAw512BgXR_fb3eI2NNwgb6dujyeNPqWLA_p7bKPjEE1u3gXq4H9wXo0aTPPM5FE035.793xSYms22yC6JeKchFhSw.Th9m5Og_o8dzQwXUZP7KEVvEl_QN7QoYLq0Q5M9nmYUkw6KdHXt32UrF5MPDWiZcofaqBrc7w9e3T1Md6ulK5W6NPqjXlOQVCn03yx1ZrcUB5aj3auyXZYk4sx_g_RQVL0ANPSS-kbH5kDb48IPxCuSmrMG3ujzQEeY5w6pttiqEyxHNzd36ydeMPcIROVQZ.boXQO2jhClSZr0qmyA4auQcfL0ancwkg7QCPIa1lJpQ",
+        this.authService.getAccessToken(),
         this.pointType,
         this.positionType
       ).subscribe((response:any)=>{

@@ -8,7 +8,7 @@
     height: 70px;
     display: flex;
     align-items: center;
-    background-color: #19d266;
+    background-color: #31b36e;
     color: white;
     font-weight: 900;
     
@@ -26,7 +26,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #19d266;
+    background-color: #31b36e;
     color: white;
     text-align: center;
   }
