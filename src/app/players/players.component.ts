@@ -29,7 +29,7 @@ export class PlayersComponent implements OnInit {
     this.playerService.getLeaguePlayerPoints(
         this.competitionId,
         this.seasonId,
-        "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIn0.O7PF5jRYnzxKj6PEl-deWqw1onVfPZtyNOOAwT40ltlrxSddbngneanKCERaH87H_Y2M3HLsgmXYrKLKGRY1U4UQ6c3OtAXM.FDmQRjD692sezgBj7l3YjQ.GddqgC4b8Ts-VswU3I5WjJ9tpxJdvy5hKZSXygivvOsOeiab2ocWqfUOKbqiZjvQXPJNsQ02r7cO5G5VNruIzoDMH9eT_WrBqMRfUEYWkWoPi2ABzGYPVCk6-N4zCFamDAoY8AhMqvbFOuYB-gAd5rBiSqv9Tfl0OUuDXlawIYWVR5m9XwguKaXg44mmxrkM.0JVId3DfsLFnleaCv5QUdTHJ6el6ddvFBwX3G2bLxS0",
+        "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIn0.srTGP7zGmBKWwRbO770dTwrLqAq5viAw512BgXR_fb3eI2NNwgb6dujyeNPqWLA_p7bKPjEE1u3gXq4H9wXo0aTPPM5FE035.793xSYms22yC6JeKchFhSw.Th9m5Og_o8dzQwXUZP7KEVvEl_QN7QoYLq0Q5M9nmYUkw6KdHXt32UrF5MPDWiZcofaqBrc7w9e3T1Md6ulK5W6NPqjXlOQVCn03yx1ZrcUB5aj3auyXZYk4sx_g_RQVL0ANPSS-kbH5kDb48IPxCuSmrMG3ujzQEeY5w6pttiqEyxHNzd36ydeMPcIROVQZ.boXQO2jhClSZr0qmyA4auQcfL0ancwkg7QCPIa1lJpQ",
         this.pointType,
         this.positionType
       ).subscribe((response:any)=>{
@@ -37,21 +37,30 @@ export class PlayersComponent implements OnInit {
       this.players=response;
       this.showSpinner=false;
     });
-    
-    
   }
-  
+
+  /* Handlers */
   public handleSelectLeague(competitionId, seasonId): void {
     this.competitionId = competitionId;
     this.seasonId = seasonId;
-  
     this.getPlayers();
     this.showSpinner=true;
   }
 
-  onSelect(player: Player): void {
+  public handleSelectPointType(pointType: string): void {
+    this.pointType = pointType;
+    this.getPlayers();
+  }
+
+  public handleSelectPositionType(positionType: string): void {
+    this.positionType = positionType;
+    this.getPlayers();
+  }
+
+  public onSelect(player: Player): void {
     this.selectedPlayer = player;
-  } 
+  }
+
 
 
 }

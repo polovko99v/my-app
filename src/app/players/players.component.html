@@ -3,22 +3,22 @@
   <a (click)="handleSelectLeague(5,2019)">Premier League</a>
   <a (click)="handleSelectLeague(8,2019)">Champions League</a><br>
   <div class="dropdown">
-    <button class="dropbtn">Point Type</button>
+    <button class="dropbtn">{{pointType || 'Point Type'}}</button>
     <div class="dropdown-content">
-      <a (click)="handleSelectLeague(5,2019)">Attack</a>
-      <a (click)="handleSelectLeague(5,2019)">Defence</a>
-      <a (click)="handleSelectLeague(5,2019)">Press</a>
-      <a (click)="handleSelectLeague(5,2019)">Shot</a>
-      <a (click)="handleSelectLeague(5,2019)">Love</a>
+      <a (click)="handleSelectPointType('attack')">Attack</a>
+      <a (click)="handleSelectPointType('defence')">Defence</a>
+      <a (click)="handleSelectPointType('press')">Press</a>
+      <a (click)="handleSelectPointType('shot')">Shot</a>
+      <a (click)="handleSelectPointType('love')">Love</a>
     </div>
   </div>
   <div class="dropdown">
-  <button class="dropbtn">Position</button>
+  <button class="dropbtn">{{positionType || 'Position'}}</button>
     <div class="dropdown-content">
-      <a (click)="handleSelectLeague(5,2019)">Forward</a>
-      <a (click)="handleSelectLeague(5,2019)">Midfielder</a>
-      <a (click)="handleSelectLeague(5,2019)">Defender</a>
-      <a (click)="handleSelectLeague(5,2019)">Goalkeeper</a>    
+      <a (click)="handleSelectPositionType('forward')">Forward</a>
+      <a (click)="handleSelectPositionType('midfielder')">Midfielder</a>
+      <a (click)="handleSelectPositionType('defender')">Defender</a>
+      <a (click)="handleSelectPositionType('goalkeeper')">Goalkeeper</a>
     </div>
   </div>
 </nav>

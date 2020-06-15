@@ -10,6 +10,9 @@ import { PointsBarComponent } from './common-components/points-bar/points-bar.co
 import { PointsSortPipe } from './pipes/points-sort.pipe';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -21,8 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PlayerPointPipe,
     PointsBarComponent,
     PointsSortPipe,
-   
-    
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +32,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule
-    
   ],
   providers: [
+    AuthGuard,
+    AuthService,
     PlayerService
   ],
   bootstrap: [AppComponent]
