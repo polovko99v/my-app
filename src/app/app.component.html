@@ -1,5 +1,11 @@
 <div class="toolbar" role="banner">
   <a href="/">FOOTRATE</a>
+  <div class="header-menu">
+    <div *ngIf="isAuthenticated && user" class="header-menu-user">
+      <img [src]="user.imageOriginal" class="header-menu-user-avatar" />
+      <a href="#" (click)="handleLogOut()" class="logout">Log Out</a>
+    </div>
+  </div>
 </div>
 <alert></alert>
 <router-outlet></router-outlet>

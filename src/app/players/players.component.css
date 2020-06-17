@@ -1,6 +1,7 @@
 .players {
   display: flex;
   flex-direction: column;
+  background-color: #f1f1f4;
 }
 
 .player {

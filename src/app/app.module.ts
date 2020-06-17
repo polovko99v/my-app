@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlayersComponent } from './players/players.component';
@@ -15,6 +15,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
+import { RequestInterceptorService } from './services/request-interceptor.service';
 
 
 
@@ -41,7 +42,12 @@ import { AlertComponent } from './alert/alert.component';
   providers: [
     AuthGuard,
     AuthService,
-    PlayerService
+    PlayerService,
+    {
+			provide: HTTP_INTERCEPTORS,
+			useClass: RequestInterceptorService,
+			multi: true,
+		},
   ],
   bootstrap: [AppComponent]
 })

@@ -33,7 +33,7 @@ export class PlayersComponent implements OnInit {
     this.playerService.getLeaguePlayerPoints(
         this.competitionId,
         this.seasonId,
-        this.authService.getAccessToken(),
+        this.authService.getUser().accessToken,
         this.pointType,
         this.positionType
       ).subscribe((response:any)=>{

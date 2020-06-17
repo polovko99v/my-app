@@ -41,12 +41,12 @@ export class SigninComponent implements OnInit {
     this.authService.signIn(this.f.username.value, this.f.secret.value)
         .subscribe(
             data => {
-                localStorage.setItem('twelve_token_id', data.accessToken);
-                this.router.navigate(['/']);
+              this.authService.setUser(data);
+              this.router.navigate(['/']);
             },
             error => {
-                this.alertService.error('Something wrong!');
-                this.loading = false;
+              this.alertService.error('Something wrong!');
+              this.loading = false;
             });
   }
 
